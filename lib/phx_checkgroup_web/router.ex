@@ -18,6 +18,8 @@ defmodule PhxCheckgroupWeb.Router do
     pipe_through :browser
 
     get "/", PageController, :home
+
+    live "/report", ReportQueryLive
   end
 
   # Other scopes may use custom stacks.
