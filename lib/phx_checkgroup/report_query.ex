@@ -1,4 +1,4 @@
-defmodule SensorMonitor.ReportQuery do
+defmodule PhxCheckgroup.ReportQuery do
   use Ecto.Schema
   import Ecto.Changeset
 
