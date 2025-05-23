@@ -5,7 +5,7 @@ defmodule PhxCheckgroup.ReportQuery do
   embedded_schema do
     field :begin_date, :date
     field :end_date, :date
-    field :days, {:array, :integer}, default: [1, 2, 3, 4, 5]
+    field :days, {:array, :string}, default: ~w(1 2 3 4 5)
   end
 
   def changeset(data, attrs) do
@@ -13,8 +13,7 @@ defmodule PhxCheckgroup.ReportQuery do
     |> cast(attrs, [:begin_date, :end_date, :days])
     |> validate_required([:begin_date, :end_date, :days])
     |> validate_begin_end_date()
-    |> update_change(:days, fn days -> Enum.reject(days, fn x -> x == "" end) end)
-    |> validate_subset(:days, 1..7)
+    |> validate_subset(:days, ~w(1 2 3 4 5 6 7))
     |> validate_length(:days, min: 1, message: "Pick at least one weekday")
   end
 

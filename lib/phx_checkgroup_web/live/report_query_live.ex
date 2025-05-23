@@ -4,13 +4,13 @@ defmodule PhxCheckgroupWeb.ReportQueryLive do
   alias Ecto.Changeset
 
   @weekdays [
-    {"Monday", 1},
-    {"Tuesday", 2},
-    {"Wednesday", 3},
-    {"Thursday", 4},
-    {"Friday", 5},
-    {"Saterday", 6},
-    {"Sunday", 7}
+    {"Monday", "1"},
+    {"Tuesday", "2"},
+    {"Wednesday", "3"},
+    {"Thursday", "4"},
+    {"Friday", "5"},
+    {"Saterday", "6"},
+    {"Sunday", "7"}
   ]
 
   defp weekdays, do: @weekdays
